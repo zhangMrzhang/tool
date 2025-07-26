@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      @keyframes rotate {
+        0% {
+          transform: translate(-50%, -50%) rotate(0deg);
+        }
+        100% {
+          transform: translate(-50%, -50%) rotate(-1turn);
+        }
+      }
+      .wrapper {
+        width: 200px;
+        height: 332px;
+        border-radius: 12px;
+        box-shadow: 0 0 36px 0 rgba(24, 29, 112, 0.06);
+        padding: 1.5px;
+        position: relative;
+        overflow: hidden;
+        background: #fff;
+      }
+      .wrapper::before {
+        content: "";
+        display: block;
+        left: 50%;
+        padding-bottom: 200%;
+        position: absolute;
+        top: 50%;
+        width: 200%;
+      }
+      .wrapper:hover::before {
+        animation: rotate 8s linear infinite;
+        background: conic-gradient(
+          from 180deg at 50% 50%,
+          #9a8bff 0deg,
+          #ffac8b 45deg,
+          transparent 90deg,
+          transparent 180deg,
+          #9a8bff 180deg,
+          #ffac8b 225deg,
+          transparent 270deg
+        );
+      }
+      .feature-card {
+        align-items: center;
+        padding: 28px 20px 20px;
+        border-radius: 11.25px;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        height: 100%;
+        background: #fff;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="feature-card"></div>
+    </div>
+  </body>
+</html>
